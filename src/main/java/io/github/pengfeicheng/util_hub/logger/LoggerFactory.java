@@ -1,4 +1,4 @@
-package org.pengfeicheng.util_hub.logger;
+package io.github.pengfeicheng.util_hub.logger;
 
 /**
  * @Description: Logger 工厂类

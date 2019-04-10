@@ -1,4 +1,4 @@
-package org.pengfeicheng.util_hub.utils;
+package io.github.pengfeicheng.util_hub.utils;
 
 import javax.management.MBeanServer;
 import javax.management.MalformedObjectNameException;
