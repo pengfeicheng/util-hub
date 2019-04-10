@@ -39,6 +39,14 @@
         <tag>util-hub-1.0</tag>
     </scm>
 
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
     <build>
         <plugins>
 
@@ -86,17 +94,8 @@
                     <mavenExecutorId>forked-path</mavenExecutorId>
                     <useReleaseProfile>false</useReleaseProfile>
                     <arguments>-Psonatype-oss-release</arguments>
-                    <pushChanges>false</pushChanges>
                     <localCheckout>false</localCheckout>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
-                    <checkModificationExcludes>
-                        <checkModificationExclude>.idea/</checkModificationExclude>
-                        <checkModificationExclude>.idea/*</checkModificationExclude>
-                        <checkModificationExclude>.idea/libraries/*</checkModificationExclude>
-                        <checkModificationExclude>pom.xml</checkModificationExclude>
-                        <checkModificationExclude>release-pom.xml</checkModificationExclude>
-                        <checkModificationExclude>util-hub.iml</checkModificationExclude>
-                    </checkModificationExcludes>
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -160,4 +159,28 @@
             </plugin>
         </plugins>
     </build>
+
+
+    <profiles>
+        <profile>
+            <id>sonatype-oss-release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>2.1.2</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

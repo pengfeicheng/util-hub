@@ -1,4 +1,4 @@
-package org.pengfeicheng.util_hub.logger;
+package io.github.pengfeicheng.util_hub.logger;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -33,6 +33,6 @@ public final class Logger {
      */
     public void error(String var){
         String message = String.format("%s %s[E]:%s",timeDateFormat.format(new Date()),tag,var);
-        System.out.println(message);
+        System.err.println(message);
     }
 }
