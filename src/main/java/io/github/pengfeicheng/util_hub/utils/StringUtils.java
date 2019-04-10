@@ -19,6 +19,53 @@ public final class StringUtils {
         return null == str || str.length() < 1;
     }
 
+
+    /**
+     * 判断指定的字段不为空
+     *
+     * @param str
+     * @return true -> 该字段不为空;false -> 为空
+     */
+    public static boolean isNotEmpty(String str) {
+        return !isEmpty(str);
+    }
+
+
+    /**
+     * 字符串内容比较
+     *
+     * @param s1
+     * @param s2
+     * @return
+     */
+    public static boolean equal(String s1, String s2) {
+        if (null == s1 && null == s2) return true;
+        if (null == s1 && null != s2) return false;
+        if (null != s1 && null == s2) return false;
+        return s1.equals(s2);
+    }
+
+
+    /**
+     * byte数组输出到十六制字符串
+     *
+     * @param data
+     * @return
+     */
+    public static String byte2Hex(byte[] data) {
+        StringBuffer buffer = new StringBuffer();
+        if (null != data) {
+            for (byte b : data) {
+                int temp = b & 0xff;
+                String ch = Integer.toHexString(temp);
+                if (ch.length() < 2)
+                    ch = "0" + ch;
+                buffer.append(ch);
+            }
+        }
+        return buffer.toString();
+    }
+
     /**
      * 截取字符串
      * @param str 待处理的字符串
