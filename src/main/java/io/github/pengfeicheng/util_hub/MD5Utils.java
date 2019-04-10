@@ -1,4 +1,4 @@
-package io.github.pengfeicheng.util_hub.utils;
+package io.github.pengfeicheng.util_hub;
 
 import java.io.File;
 import java.io.InputStream;

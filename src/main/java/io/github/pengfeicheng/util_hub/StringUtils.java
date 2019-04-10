@@ -1,4 +1,4 @@
-package io.github.pengfeicheng.util_hub.utils;
+package io.github.pengfeicheng.util_hub;
 
 /**
  * @Description: 字符串工具类
@@ -19,7 +19,6 @@ public final class StringUtils {
         return null == str || str.length() < 1;
     }
 
-
     /**
      * 判断指定的字段不为空
      *
@@ -30,6 +29,25 @@ public final class StringUtils {
         return !isEmpty(str);
     }
 
+    /**
+     * 截取字符串
+     * @param str 待处理的字符串
+     * @param maxLength 最大长芦
+     * @param suffix 超过最大长度时添加的后缀
+     * @return
+     */
+    public static String cut(String str,int maxLength,String suffix){
+        if(isEmpty(str) || str.length() <= maxLength || maxLength < 0) return str;
+        if(maxLength < 1) return "";
+        String temp = str.substring(0,maxLength);
+        if(isEmpty(suffix) || suffix.length() > maxLength){
+            return temp;
+        }
+
+        temp = str.substring(0,maxLength - suffix.length());
+        temp += suffix;
+        return temp;
+    }
 
     /**
      * 字符串内容比较
@@ -44,7 +62,6 @@ public final class StringUtils {
         if (null != s1 && null == s2) return false;
         return s1.equals(s2);
     }
-
 
     /**
      * byte数组输出到十六制字符串
@@ -67,22 +84,22 @@ public final class StringUtils {
     }
 
     /**
-     * 截取字符串
-     * @param str 待处理的字符串
-     * @param maxLength 最大长芦
-     * @param suffix 超过最大长度时添加的后缀
+     * 十六制字符串到byte数组
+     *
+     * @param data
      * @return
      */
-    public static String cut(String str,int maxLength,String suffix){
-        if(isEmpty(str) || str.length() <= maxLength || maxLength < 0) return str;
-        if(maxLength < 1) return "";
-        String temp = str.substring(0,maxLength);
-        if(isEmpty(suffix) || suffix.length() > maxLength){
-            return temp;
+    public static byte[] hex2Byte(String data) {
+        if (null == data || data.length() == 0 || data.length() % 2 != 0) {
+            return new byte[0];
         }
-
-        temp = str.substring(0,maxLength - suffix.length());
-        temp += suffix;
-        return temp;
+        byte[] result = new byte[data.length() / 2];
+        char[] source = data.toCharArray();
+        for (int i = 0; i < source.length; i += 2) {
+            String num = source[i] + "" + source[i + 1];
+            int temp = Integer.parseInt(num, 16);
+            result[i / 2] = (byte) (temp & 0xff);
+        }
+        return result;
     }
 }

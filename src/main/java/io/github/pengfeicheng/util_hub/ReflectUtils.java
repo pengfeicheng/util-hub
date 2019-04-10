@@ -1,6 +1,6 @@
-package io.github.pengfeicheng.util_hub.utils;
+package io.github.pengfeicheng.util_hub;
 
-import io.github.pengfeicheng.util_hub.log.Logger;
+import io.github.pengfeicheng.util_hub.logger.Logger;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

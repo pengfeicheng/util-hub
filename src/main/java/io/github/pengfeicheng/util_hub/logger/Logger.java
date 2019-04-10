@@ -1,4 +1,4 @@
-package io.github.pengfeicheng.util_hub.log;
+package io.github.pengfeicheng.util_hub.logger;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
