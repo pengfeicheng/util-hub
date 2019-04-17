@@ -10,8 +10,6 @@ import java.math.BigDecimal;
  */
 public class DecimalUtils {
 
-    private DecimalUtils() { }
-
     /**
      * 加，默认是精确到小数后两位
      * @param a 被除数
@@ -53,8 +51,8 @@ public class DecimalUtils {
 
     /**
      * 减，默认是精确到小数后两位
-     * @param a 被除数
-     * @param b 除数
+     * @param a 被减数
+     * @param b 减数
      * @return 精确到小数点后两位的 double 数
      */
     public static double subtract(double a,double b){
@@ -66,8 +64,8 @@ public class DecimalUtils {
 
     /**
      * 减，默认是精确到小数后两位
-     * @param a 被除数
-     * @param b 除数
+     * @param a 被减数
+     * @param b 减数
      * @return 精确到小数点后两位的 double 数
      */
     public static BigDecimal subtract(String a,String b){
@@ -79,8 +77,8 @@ public class DecimalUtils {
 
     /**
      * 减，默认是精确到小数后两位
-     * @param a 被除数
-     * @param b 除数
+     * @param a 被减数
+     * @param b 减数
      * @return 精确到小数点后两位的 double 数
      */
     public static double subtract(double a,long b){
@@ -92,8 +90,8 @@ public class DecimalUtils {
 
     /**
      * 减，默认是精确到小数后两位
-     * @param a 被除数
-     * @param b 除数
+     * @param a 被减数
+     * @param b 减数
      * @return 精确到小数点后两位的 double 数
      */
     public static double subtract(long a,double b){
@@ -218,5 +216,58 @@ public class DecimalUtils {
         BigDecimal numberB = new BigDecimal(b);
         BigDecimal result = numberA.multiply(numberB).setScale(2);
         return result.doubleValue();
+    }
+
+
+    /**
+     * 将字符串转换到 Long
+     * @param s
+     * @return
+     */
+    public static long parseLong(String s){
+        try{
+            return Long.parseLong(s);
+        }catch (Exception e){
+            return 0;
+        }
+    }
+
+    /**
+     * 将字符串转换到 Int
+     * @param s
+     * @return
+     */
+    public static int parseInt(String s){
+        try{
+            return Integer.parseInt(s);
+        }catch (Exception e){
+            return 0;
+        }
+    }
+
+    /**
+     * 将字符串转换到 Double
+     * @param s
+     * @return
+     */
+    public static double parseDouble(String s){
+        try{
+            return Double.parseDouble(s);
+        }catch (Exception e){
+            return 0;
+        }
+    }
+
+    /**
+     * 将字符串转换到 Float
+     * @param s
+     * @return
+     */
+    public static float parseFloat(String s){
+        try{
+            return Float.parseFloat(s);
+        }catch (Exception e){
+            return 0;
+        }
     }
 }

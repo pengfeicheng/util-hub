@@ -6,12 +6,23 @@
 
     <groupId>io.github.pengfeicheng</groupId>
     <artifactId>util_hub</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.4</version>
 
     <packaging>jar</packaging>
     <name>util_hub</name>
     <description>util_hub is a java framework that you can use to build your project as utils</description>
     <url>https://github.com/pengfeicheng/util-hub</url>
+
+    <dependencies>
+
+        <!-- GSON -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.2</version>
+        </dependency>
+
+    </dependencies>
 
     <developers>
         <developer>

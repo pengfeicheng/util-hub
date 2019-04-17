@@ -64,8 +64,12 @@ public enum EnumTimeFormat {
     /**
      * 日期 示例：2019/04/01
      */
-    FORMAT_yMd("yyyy/MM/dd");
+    FORMAT_yMd("yyyy/MM/dd"),
 
+    /**
+     * 日期 示例：2019/04/01 12:34:24
+     */
+    FORMAT_yMdHHmmSS("yyyy/MM/dd HH:mm:ss");
 
     private SimpleDateFormat format;
 
